@@ -1,0 +1,66 @@
+{
+  "name": "blencm-api",
+  "version": "0.0.1",
+  "description": "blencm-Api API client library. Work on browser and server.",
+  "license": "MIT",
+  "author": {
+    "name": "Bleker <blekercordova@gmail.com>",
+    "url": "https://github.com/blekercm"
+  },
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blekercm/blencm-api"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "prettier": "prettier --write \"src/**/*.js\"",
+    "precommit": "lint-staged",
+    "test": "jest --coverage --runInBand --coverageDirectory=reports/coverage/",
+    "test:watch": "jest --watchAll"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      "jest-junit"
+    ],
+    "transform": {
+      "^.+\\.m?js$": "babel-jest"
+    }
+  },
+  "jest-junit": {
+    "output": "reports/junit/junit.xml",
+    "usePathForSuiteName": "true"
+  },
+  "dependencies": {
+    "cross-fetch": "^3.0.5",
+    "query-string": "^6.13.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^7.8.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "jest": "^26.4.2",
+    "jest-junit": "^11.1.0",
+    "lint-staged": "^10.2.13",
+    "prettier": "^2.1.1"
+  }
+}
