@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import fetch from 'cross-fetch';
 import RestClient from './restClient';
 
 export default class ApiClient extends RestClient {
