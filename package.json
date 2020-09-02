@@ -1,6 +1,6 @@
 {
   "name": "blencm-api",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "blencm-Api API client library. Work on browser and server.",
   "license": "MIT",
   "author": {

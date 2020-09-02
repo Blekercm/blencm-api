@@ -13,9 +13,8 @@ export default class WebStoreClient extends RestClient {
 			headers: { 'Content-Type': 'application/json' },
 		};
 
-		return fetch(
-			'https://api.blencm.com/v1/account/authorize',
-			config
-		).then((json) => console.log(json));
+		return fetch('https://api.blencm.com/v1/account/authorize', config).then(
+			RestClient.returnStatusAndJson
+		);
 	};
 }
