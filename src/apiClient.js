@@ -1,4 +1,4 @@
-import fetch from 'cross-fetch';
+import fetch from 'node-fetch';
 import RestClient from './restClient';
 
 export default class ApiClient extends RestClient {
@@ -6,9 +6,9 @@ export default class ApiClient extends RestClient {
 		const config = {
 			method: 'post',
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({ email })
+			body: JSON.stringify({ email }),
 		};
 		return fetch(`${baseUrl}/authorize`, config).then(
 			RestClient.returnStatusAndJson

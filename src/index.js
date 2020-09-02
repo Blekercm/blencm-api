@@ -58,7 +58,7 @@ export default class Client {
 
 		const apiClient = new ApiClient({
 			baseUrl: this.apiBaseUrl,
-			token: this.apiToken
+			token: this.apiToken,
 		});
 		const ajaxClient = new AjaxClient({ baseUrl: this.ajaxBaseUrl });
 		const webstoreClient = new WebStoreClient({ token: this.webstoreToken });

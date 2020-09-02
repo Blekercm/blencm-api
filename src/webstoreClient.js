@@ -1,4 +1,4 @@
-import fetch from 'cross-fetch';
+import fetch from 'node-fetch';
 import RestClient from './restClient';
 
 export default class WebStoreClient extends RestClient {
@@ -9,14 +9,13 @@ export default class WebStoreClient extends RestClient {
 	static authorize = (email, adminUrl) => {
 		const config = {
 			method: 'post',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({ email, admin_url: adminUrl })
+			body: JSON.stringify({ email, admin_url: adminUrl }),
+			headers: { 'Content-Type': 'application/json' },
 		};
 
-		return fetch('https://api.blencm.com/v1/account/authorize', config).then(
-			RestClient.returnStatusAndJson
-		);
+		return fetch(
+			'https://api.blencm.com/v1/account/authorize',
+			config
+		).then((json) => console.log(json));
 	};
 }

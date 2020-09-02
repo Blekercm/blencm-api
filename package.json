@@ -42,10 +42,6 @@
     "usePathForSuiteName": "true"
   },
   "dependencies": {
-    "cross-fetch": "^3.0.5",
-    "query-string": "^6.13.1"
-  },
-  "devDependencies": {
     "@babel/cli": "^7.11.5",
     "@babel/core": "^7.11.5",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -72,6 +68,8 @@
     "jest": "^26.4.2",
     "jest-junit": "^11.1.0",
     "lint-staged": "^10.2.13",
-    "prettier": "^2.1.1"
+    "prettier": "^2.1.1",
+    "node-fetch": "^2.6.0",
+    "query-string": "^6.13.1"
   }
 }
