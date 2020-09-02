@@ -3,7 +3,7 @@ import RestClient from './restClient';
 
 export default class WebStoreClient extends RestClient {
 	constructor(options) {
-		super({ baseUrl: 'https://api.blencm.com/v1', token: options.token });
+		super({ baseUrl: 'https://api.cezerin.com/v1', token: options.token });
 	}
 
 	static authorize = (email, adminUrl) => {
@@ -13,7 +13,7 @@ export default class WebStoreClient extends RestClient {
 			headers: { 'Content-Type': 'application/json' },
 		};
 
-		return fetch('https://api.blencm.com/v1/account/authorize', config).then(
+		return fetch('https://api.cezerin.com/v1/account/authorize', config).then(
 			RestClient.returnStatusAndJson
 		);
 	};
