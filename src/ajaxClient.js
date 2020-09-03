@@ -6,8 +6,8 @@ export default class AjaxClient extends RestClient {
 			credentials: this.getCredentialsConfig(this.baseUrl),
 			method,
 			headers: {
-				'Content-Type': 'application/json',
-			},
+				'Content-Type': 'application/json'
+			}
 		};
 
 		if (cookie) {

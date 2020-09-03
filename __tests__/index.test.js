@@ -1,16 +1,16 @@
-import Client from '../src/index';
+import CezeriClient from '../src/index';
 
 const API_CREDENTIALS = {
 	apiBaseUrl: '/api',
-	apiToken: '<test>',
+	apiToken: '<test>'
 };
 
 const AJAX_CREDENTIALS = {
-	ajaxBaseUrl: '/ajax',
+	ajaxBaseUrl: '/ajax'
 };
 
 test('api structure', () => {
-	const api = new Client(API_CREDENTIALS);
+	const api = new CezeriClient(API_CREDENTIALS);
 	expect(typeof api.products.list).toBe('function');
 	expect(typeof api.products.retrieve).toBe('function');
 	expect(typeof api.products.create).toBe('function');
@@ -153,7 +153,7 @@ test('api structure', () => {
 });
 
 test('ajax structure', () => {
-	const api = new Client(AJAX_CREDENTIALS);
+	const api = new CezeriClient(AJAX_CREDENTIALS);
 	expect(typeof api.ajax.products.list).toBe('function');
 	expect(typeof api.ajax.products.retrieve).toBe('function');
 	expect(typeof api.ajax.products.create).toBe('function');
@@ -192,7 +192,7 @@ test('ajax structure', () => {
 });
 
 test('webstore structure', () => {
-	const api = new Client(AJAX_CREDENTIALS);
+	const api = new CezeriClient(AJAX_CREDENTIALS);
 	expect(typeof api.webstore.account.retrieve).toBe('function');
 	expect(typeof api.webstore.account.update).toBe('function');
 	expect(typeof api.webstore.account.updateDeveloper).toBe('function');
@@ -207,6 +207,6 @@ test('webstore structure', () => {
 });
 
 test('static methods', () => {
-	expect(typeof Client.authorize).toBe('function');
-	expect(typeof Client.authorizeInWebStore).toBe('function');
+	expect(typeof CezeriClient.authorize).toBe('function');
+	expect(typeof CezeriClient.authorizeInWebStore).toBe('function');
 });

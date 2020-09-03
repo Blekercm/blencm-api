@@ -1,17 +1,11 @@
 {
-	"presets": [
-		[
-			"@babel/preset-env",
-			{
-				"targets": {
-					"browsers": ["last 2 versions"],
-					"node": "current"
-				}
-			}
-		]
-	],
-	"plugins": [
-		"@babel/plugin-proposal-class-properties",
-		"@babel/plugin-transform-runtime"
-	]
+  "presets": [
+    ["env", {
+      "targets": {
+				"browsers": ["last 2 versions"],
+				"node": "current"
+      }
+    }]
+  ],
+	"plugins": ["transform-class-properties"]
 }

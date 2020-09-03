@@ -1,7 +1,7 @@
 {
   "name": "blencm-api",
-  "version": "0.0.5",
-  "description": "blencm-Api API client library. Work on browser and server.",
+  "version": "0.0.6",
+  "description": "Client-Api API client library. Work on browser and server.",
   "license": "MIT",
   "author": {
     "name": "Bleker <blekercordova@gmail.com>",
@@ -10,7 +10,7 @@
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/blekercm/blencm-api"
+    "url": "https://github.com/blekercm/client-api"
   },
   "scripts": {
     "build": "babel src -d lib",
@@ -42,22 +42,15 @@
     "usePathForSuiteName": "true"
   },
   "dependencies": {
-    "@babel/cli": "^7.11.5",
-    "@babel/core": "^7.11.5",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/plugin-transform-runtime": "^7.11.5",
-    "@babel/polyfill": "7.11.5",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "@babel/register": "^7.11.5",
-    "@babel/runtime": "^7.11.2",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
-    "babel-node": "0.0.1-security",
-    "babel-plugin-react-transform": "^3.0.0",
+    "cross-fetch": "^2.2.2",
+    "query-string": "^6.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-react-pure-class-to-function": "^1.0.1",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -68,8 +61,6 @@
     "jest": "^26.4.2",
     "jest-junit": "^11.1.0",
     "lint-staged": "^10.2.13",
-    "prettier": "^2.1.1",
-    "cross-fetch": "^2.2.2",
-    "query-string": "^6.1.0"
+    "prettier": "^2.1.1"
   }
 }

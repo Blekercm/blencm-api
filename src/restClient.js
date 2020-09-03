@@ -12,8 +12,8 @@ export default class RestClient {
 			method,
 			headers: {
 				'Content-Type': 'application/json',
-				Authorization: `Bearer ${this.token}`,
-			},
+				Authorization: `Bearer ${this.token}`
+			}
 		};
 
 		if (data) {
@@ -22,24 +22,24 @@ export default class RestClient {
 		return config;
 	}
 
-	postFormDataConfig = (formData) => ({
+	postFormDataConfig = formData => ({
 		method: 'post',
 		body: formData,
 		headers: {
-			Authorization: `Bearer ${this.token}`,
-		},
+			Authorization: `Bearer ${this.token}`
+		}
 	});
 
-	returnStatusAndJson = (response) =>
+	returnStatusAndJson = response =>
 		response
 			.json()
-			.then((json) => ({ status: response.status, json }))
+			.then(json => ({ status: response.status, json }))
 			.catch(() => ({ status: response.status, json: null }));
 
-	static returnStatusAndJsonStatic = (response) =>
+	static returnStatusAndJsonStatic = response =>
 		response
 			.json()
-			.then((json) => ({ status: response.status, json }))
+			.then(json => ({ status: response.status, json }))
 			.catch(() => ({ status: response.status, json: null }));
 
 	get(endpoint, filter, cookie) {

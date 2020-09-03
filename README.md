@@ -1,3 +1,82 @@
+# Cezerin2 API client library
+
+Allows asynchronous requests to Cezerin2 REST API and get results with native Promise or async/await. Work on browser and server.
+This is based from Cezerin-client
+
+Client include:
+- Cezerin2 API
+- Cezerin2 AJAX API
+- Cezerin2 Web Store API
+
+
+Install with:
+
+```
+npm i cezerin2-client
+```
+
+
+## Initialize
+
+```javascript
+import CezerinClient from 'cezerin2-client';
+
+const api = new CezerinClient({
+  apiBaseUrl: 'https://website.com/api/v1',
+  apiToken: '<token>'
+});
+```
+
+## Usage
+
+```javascript
+// fetch all categories with await
+const categoriesResponse = await api.productCategories.list();
+const categories = categoriesResponse.json;
+for(const category of categories){
+  console.log(category.name)
+}
+
+// fetch all categories with Promise
+api.productCategories.list().then(({status, json}) => {
+    const categories = json;
+    for(const category of categories){
+      console.log(category.name)
+    }
+});
+
+// create a category
+api.productCategories.create({name: 'Shoes', active: true}).then(({status, json}) => {
+    const categoryId = json.id;
+});
+```
+
+##  Error Handling
+
+```javascript
+// with await
+try {
+  const createResult = await api.productCategories.create({ name: 'Shoes' });
+  const newCategory = createResult.json;
+} catch(e) {
+  console.log(e);
+}
+
+// with Promise
+api.productCategories.create({ name: 'Shoes' })
+.then(({status, json}) => {
+  if(status === 200) {
+    // success
+    const newCategory = json;
+  } else {
+    // 404 or bad request
+  }
+})
+.catch(err => {
+  console.log(err)
+});
+```
+
 ## Methods
 
 * `api.authorize(baseUrl, user, pass)`
@@ -162,3 +241,8 @@
 * `api.webstore.services.settings.update(serviceId, settings)`
 * `api.webstore.services.actions.call(serviceId, actionId)`
 * `api.webstore.services.logs.list(serviceId)`
+
+
+## Contributing
+
+If you can, please contribute by reporting issues, discussing ideas, or submitting pull requests with patches and new features. We do our best to respond to all issues and pull requests within a day or two, and make patch releases to npm regularly.
